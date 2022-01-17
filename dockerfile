@@ -11,4 +11,4 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y xpra qgis qgis-plugin-grass
 
-CMD xpra start --start=qgis --bind-tcp=0.0.0.0:10000 --html=on && tail -f /dev/null
+CMD xpra start --start=qgis --bind-tcp=0.0.0.0:8080 --html=on && tail -f /dev/null

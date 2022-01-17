@@ -34,7 +34,7 @@ RUN set -e; \
     apt-get install -y gcsfuse \
     && apt-get clean
 
-ENV MNT_DIR /home/geomanguera
+ENV MNT_DIR /home/GFUSE
 
 COPY . ./
 

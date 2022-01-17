@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+LABEL package.date=2022-01-16
+
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN set -e;

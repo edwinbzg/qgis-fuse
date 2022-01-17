@@ -18,7 +18,7 @@ RUN apt-get update && \
     apt-key add - && \
     apt-get update && \
     apt-get install -y xpra qgis qgis-plugin-grass gcsfuse && \
-    && apt-get clean
+    apt-get clean
 
 # GFUSE
 RUN set -e; \

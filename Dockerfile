@@ -20,20 +20,6 @@ RUN apt-get update && \
     apt-get install -y xpra qgis qgis-plugin-grass gcsfuse && \
     apt-get clean
 
-# GFUSE
-RUN set -e; \
-    apt-get update -y && apt-get install -y \
-    tini \
-    lsb-release; \
-    gcsFuseRepo=gcsfuse-`lsb_release -c -s`; \
-    echo "deb http://packages.cloud.google.com/apt $gcsFuseRepo main" | \
-    tee /etc/apt/sources.list.d/gcsfuse.list; \
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
-    apt-key add -; \
-    apt-get update; \
-    apt-get install -y gcsfuse \
-    && apt-get clean
-
 ENV MNT_DIR /home/GFUSE
 
 COPY . ./

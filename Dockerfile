@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN set -e; \
     apt-get update && \
-    apt-get install -y tini gnupg apt-transport-https wget software-properties-common gpg lsb-release && \
+    apt-get install -y gnupg apt-transport-https wget software-properties-common gpg lsb-release && \
     wget -q https://xpra.org/gpg.asc -O- | apt-key add - && \
     add-apt-repository "deb https://xpra.org/ bionic main" && \
     wget -q https://qgis.org/downloads/qgis-2021.gpg.key -O- | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import && \

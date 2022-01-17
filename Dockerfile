@@ -36,6 +36,8 @@ RUN set -e; \
 
 ENV MNT_DIR /home/geomanguera
 
+COPY . ./
+
 # Ensure the script is executable
 RUN chmod +x /start.sh
 

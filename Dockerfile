@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
+RUN set -e; \
+    apt-get update && \
     apt-get install -y tini gnupg apt-transport-https wget software-properties-common gpg lsb-release && \
     wget -q https://xpra.org/gpg.asc -O- | apt-key add - && \
     add-apt-repository "deb https://xpra.org/ bionic main" && \

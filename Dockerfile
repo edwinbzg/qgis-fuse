@@ -34,7 +34,7 @@ RUN set -e; \
     apt-get install -y gcsfuse \
     && apt-get clean
 
-ENV MNT_DIR /mnt/gcs
+ENV MNT_DIR /home/geomanguera
 
 # Ensure the script is executable
 RUN chmod +x /start.sh

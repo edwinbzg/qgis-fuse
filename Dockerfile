@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:buster
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,7 +13,10 @@ RUN apt-get update && \
     apt-get install -y xpra qgis qgis-plugin-grass
 
 # Install system dependencies
-RUN apt-get update -y && apt-get install -y lsb-release; \
+RUN set -e; \
+    apt-get update -y && apt-get install -y \
+    tini \
+    lsb-release; \
     gcsFuseRepo=gcsfuse-`lsb_release -c -s`; \
     echo "deb http://packages.cloud.google.com/apt $gcsFuseRepo main" | \
     tee /etc/apt/sources.list.d/gcsfuse.list; \

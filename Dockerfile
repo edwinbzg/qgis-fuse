@@ -33,6 +33,7 @@ COPY . ./
 
 # Ensure the script is executable
 RUN chmod +x /start.sh
-RUN chmod +x /gfuse.sh
+
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
 CMD ["/start.sh"]

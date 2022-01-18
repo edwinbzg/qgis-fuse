@@ -33,5 +33,6 @@ COPY . ./
 
 # Ensure the script is executable
 RUN chmod +x /start.sh
+RUN chmod +x /gfuse.sh
 
 CMD ["/start.sh"]

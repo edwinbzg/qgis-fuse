@@ -21,7 +21,7 @@
 mkdir -p $MNT_DIR
 
 echo "Mounting GCS Fuse."
-gcsfuse --debug_gcs --debug_fuse geomanguera $MNT_DIR 
+gcsfuse --debug_gcs --debug_fuse $BUCKET $MNT_DIR 
 echo "Mounting completed."
 
 # Run the web service on container startup. Here we use the gunicorn

@@ -29,4 +29,4 @@ echo "Mounting completed."
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 # Timeout is set to 0 to disable the timeouts of the workers to allow Cloud Run to handle instance scaling.
-xpra start --start=qgis --bind-tcp=0.0.0.0:8080 --html=on && tail -f /dev/null
+xpra start --start=qgis --bind-tcp=0.0.0.0:8080,auth=env:name=$PASSWORD --html=on && tail -f /dev/null
